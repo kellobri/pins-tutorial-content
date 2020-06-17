@@ -6,8 +6,8 @@ output:
     toc_float: true
 ---
 
-`r if(Sys.getenv('CONNECT_SERVER') == '') { "ERROR: You must set the CONNECT_SERVER environment variable\n" }`
-`r if(Sys.getenv('CONNECT_API_KEY') == '') { "ERROR: You must set the CONNECT_API_KEY environment variable\n" }`
+`r if(Sys.getenv('CONNECT_SERVER') == '') { "<h4>ERROR: You must set the CONNECT_SERVER environment variable</h4>\n" }`
+`r if(Sys.getenv('CONNECT_API_KEY') == '') { "<h4>ERROR: You must set the CONNECT_API_KEY environment variable</h4>\n" }`
 `r if(Sys.getenv('CONNECT_API_KEY') == '' || Sys.getenv('CONNECT_SERVER') == '') { knitr::knit_exit() }`
 
 # Purpose
