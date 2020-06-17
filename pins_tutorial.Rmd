@@ -10,6 +10,10 @@ output:
 `r if(Sys.getenv('CONNECT_API_KEY') == '') { "ERROR: You must set the CONNECT_API_KEY environment variable\n" }`
 `r if(Sys.getenv('CONNECT_API_KEY') == '' || Sys.getenv('CONNECT_SERVER') == '') { knitr::knit_exit() }`
 
+```{r setup}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
 # Purpose
 This document provides a follow-along example of:  
 
