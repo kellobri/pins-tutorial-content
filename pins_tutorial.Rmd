@@ -6,12 +6,9 @@ output:
     toc_float: true
 ---
 
-```{r setup}
-knitr::opts_chunk$set(echo = FALSE)
-if(Sys.getenv('CONNECT_SERVER') == '') { "<h4>ERROR: You must set the CONNECT_SERVER environment variable</h4>\n" }
-if(Sys.getenv('CONNECT_API_KEY') == '') { "<h4>ERROR: You must set the CONNECT_API_KEY environment variable</h4>\n" }
-if(Sys.getenv('CONNECT_API_KEY') == '' || Sys.getenv('CONNECT_SERVER') == '') { knitr::knit_exit() }
-```
+`r if(Sys.getenv('CONNECT_SERVER') == '') { "ERROR: You must set the CONNECT_SERVER environment variable\n" }`
+`r if(Sys.getenv('CONNECT_API_KEY') == '') { "ERROR: You must set the CONNECT_API_KEY environment variable\n" }`
+`r if(Sys.getenv('CONNECT_API_KEY') == '' || Sys.getenv('CONNECT_SERVER') == '') { knitr::knit_exit() }`
 
 # Purpose
 This document provides a follow-along example of:  
