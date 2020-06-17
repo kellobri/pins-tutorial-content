@@ -49,9 +49,10 @@ First, **register the board** so your session knows that it can place content on
 ```{r}
 # Pins will use CONNECT_API_KEY and CONNECT_SERVER by default,
 # but we are being explicit here anyway.
-pins::board_register("rsconnect",
-               key = Sys.getenv("CONNECT_API_KEY"),
-               server = Sys.getenv("CONNECT_SERVER"))
+pins::board_register_rsconnect(
+  key = Sys.getenv("CONNECT_API_KEY"), 
+  server = Sys.getenv("CONNECT_SERVER")
+)
 ```
 
 After running the script above, did you see that the Connections pane in your RStudio IDE now shows the board `rsconnect`?  This gives you an easy way to browse your organization's pinned objects.  Here's what mine looks like:  
@@ -103,9 +104,10 @@ Replace the `# Retrieve Pin` code section below with the sample from your own pi
 ```{r}
 # Register RStudio Connect
 library(pins)
-pins::board_register("rsconnect",
-               key = Sys.getenv("CONNECT_API_KEY"),
-               server = Sys.getenv("CONNECT_SERVER"))
+pins::board_register_rsconnect(
+  key = Sys.getenv("CONNECT_API_KEY"), 
+  server = Sys.getenv("CONNECT_SERVER")
+)
 
 # Retrieve Pin
 # beaver_data <- pin_get("your/pin", board = "rsconnect")
