@@ -10,10 +10,6 @@ output:
 `r if(Sys.getenv('CONNECT_API_KEY') == '') { "ERROR: You must set the CONNECT_API_KEY environment variable\n" }`
 `r if(Sys.getenv('CONNECT_API_KEY') == '' || Sys.getenv('CONNECT_SERVER') == '') { knitr::knit_exit() }`
 
-```{r setup}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
 # Purpose
 This document provides a follow-along example of:  
 
@@ -21,17 +17,23 @@ This document provides a follow-along example of:
 * Retrieving a pin from RStudio Connect 
 * Publishing content that uses a pin to RStudio Connect  
 
-# Prework
-Prior to beginning, ensure you:  
+# Prework - Environment Variables
+Prior to beginning, environment variables must be set in your development environment for pins to work. 
 
 1. Create an API key from RStudio Connect: [Learn How](https://docs.rstudio.com/connect/user/api-keys/)  
-2. Save your API key as a system environment variable. Example: `Sys.setenv("CONNECT_API_KEY" = "key value")`.
-3. For convenience, save your RStudio Connect server address as a system environment variable as well. Example: `Sys.setenv("CONNECT_SERVER" = "https://your-server-address.com/")`
+2. Create a `.Renviron` file in this directory to store the API key and RStudio Connect server address variables.
 
-Important: Keep your API key secure! Set environment variables using the R Console; not as something saved in your script! 
+```
+# Example .Renviron file contents
+
+CONNECT_SERVER="<your-connect-server>"
+CONNECT_API_KEY="<your-connect-api-key>"
+```
+
+Need help? Learn more about [environment variables and managing them in R](https://rviews.rstudio.com/2017/04/19/r-for-enterprise-understanding-r-s-startup/).
 
 # Creating a pin
-Let's say we are running an important analysis that involves body temperature mesurements of beavers. Let's look at our data first.  
+Let's say we are running an important analysis that involves body temperature measurements of beavers. Let's look at our data first.  
 
 ```{r}
 library(datasets)
