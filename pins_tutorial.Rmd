@@ -122,7 +122,7 @@ Jackpot! We have our data.
 
 # Using pins in content 
 
-So you think you're hot stuff and off and running?  For now, perhaps.  But let's say you want to publish something to RStudio Connect (like this RMD file), which uses pinned content in it.
+So you think you're hot stuff and off and running?  For now, perhaps.  But let's say you want to publish something to RStudio Connect (like this RMD file), which creates or updates a pin. A good reason for this would be because you want to use Connect's scheduling feature to make an ETL (extract, transform, and load) process that keeps your pin up-to-date.  That way, downstream apps or analyses can point to this current pin and stay current and you don't have to re-deploy that app or analysis every time the data updates!  Now _that's_ working smart!
 
 ## Try publishing
 
@@ -156,7 +156,7 @@ Click the **Refresh Report** button to re-render your document with the new envi
 knitr::include_graphics("images/deploy_success.png")
 ```
 
-Voilà!  Congratulations!  You're a pinning machine. **You've now deployed content that includes references to a pinned object.**
+Voilà!  Congratulations!  You're a pinning machine. **You've now deployed content that includes references to a pinned object.**. You're ready to incorporate pins as part of a more efficient workflow. Congratulations!
 
 # Learn more about pins 
 
